@@ -1,0 +1,17 @@
+<div>
+  <h1>Digite seu Email</h1>
+ </div>
+
+ <div>
+  <form id="eml" #emailform="ngForm" (ngSubmit)="onSubmit(emailform)">
+    <label for="email"></label>
+    <p>Email: <input id="email" type="text" name="email" [(ngModel)] = 'email' #em ="ngModel" required email></p>
+    <p>Senha: <input id="senha" type="password" name="senha" [(ngModel)] = 'senha' #sen ="ngModel"  minlenght = "8" required></p>
+    <button type="submit" [disabled]="emailform.form.invalid">Enviar</button>
+
+  </form>
+  <div class="interv" *ngIf="em.dirty && sen.dirty">
+    <p>Digite uma senha</p>
+  </div>
+
+ </div>
